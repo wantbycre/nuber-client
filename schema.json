@@ -126,7 +126,7 @@
             "deprecationReason": null
           },
           {
-            "name": "GetNearByDrivers",
+            "name": "GetNearbyDrivers",
             "description": "",
             "args": [],
             "type": {
@@ -134,7 +134,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "GetNearByDriversResponse",
+                "name": "GetNearbyDriversResponse",
                 "ofType": null
               }
             },
@@ -1571,7 +1571,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "GetNearByDriversResponse",
+        "name": "GetNearbyDriversResponse",
         "description": "",
         "fields": [
           {

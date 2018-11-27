@@ -10,6 +10,7 @@
     "react": "^16.6.3",
     "react-apollo": "^2.3.1",
     "react-dom": "^16.6.3",
+    "react-facebook-login": "^4.1.1",
     "react-helmet": "^5.2.0",
     "react-router-dom": "^4.3.1",
     "react-scripts-ts": "3.1.0",
@@ -18,7 +19,7 @@
     "styled-reset": "^1.6.1"
   },
   "scripts": {
-    "start": "react-scripts-ts start",
+    "start": "HTTPS=true react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
