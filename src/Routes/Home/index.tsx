@@ -1,3 +1,3 @@
 import React from "react";
 
-export default () => <span>lala</span>;
+export default () => <span>lala홈</span>;
