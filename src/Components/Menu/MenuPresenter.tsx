@@ -1,11 +1,13 @@
 import React from "react";
+import { MutationFn } from "react-apollo";
 import { Link } from "react-router-dom";
 import styled from "../../typed-components";
-import { userProfile } from "../../types/api";
+import { toggleDriving, userProfile } from "../../types/api";
 
 const Container = styled.div`
   height: 100%;
 `;
+
 const Header = styled.div`
   background-color: black;
   height: 20%;
@@ -13,6 +15,7 @@ const Header = styled.div`
   padding: 0 15px;
   color: white;
 `;
+
 const SLink = styled(Link)`
   font-size: 22px;
   display: block;
@@ -20,6 +23,7 @@ const SLink = styled(Link)`
   margin-bottom: 25px;
   font-weight: 400;
 `;
+
 const Image = styled.img`
   height: 80px;
   width: 80px;
@@ -27,6 +31,7 @@ const Image = styled.img`
   border-radius: 40px;
   overflow: hidden;
 `;
+
 const Name = styled.h2`
   font-size: 22px;
   color: white;
@@ -35,15 +40,18 @@ const Name = styled.h2`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
+
 const Rating = styled.h5`
   font-size: 18px;
   color: white;
 `;
+
 const Text = styled.span`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 `;
+
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -71,11 +79,13 @@ const ToggleDriving = styled<IToggleProps, any>("button")`
 interface IProps {
   data?: userProfile;
   loading: boolean;
+  toggleDrivingFn: MutationFn<toggleDriving>;
 }
 
 const MenuPresenter: React.SFC<IProps> = ({
   data: { GetMyProfile: { user = null } = {} } = {},
-  loading
+  loading,
+  toggleDrivingFn
 }) => (
   <Container>
     {!loading && user && user.fullName && (
@@ -98,11 +108,12 @@ const MenuPresenter: React.SFC<IProps> = ({
         </Header>
         <SLink to="/trips">Your Trips</SLink>
         <SLink to="/settings">Settings</SLink>
-        <ToggleDriving isDriving={user.isDriving}>
+        <ToggleDriving onClick={toggleDrivingFn} isDriving={user.isDriving}>
           {user.isDriving ? "Stop driving" : "Start driving"}
         </ToggleDriving>
       </React.Fragment>
     )}
   </Container>
 );
+
 export default MenuPresenter;
