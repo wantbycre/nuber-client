@@ -1,3 +1,2 @@
-import React from "react";
-
-export default () => <span>lala</span>;
+import EditAccountContainer from "./EditAccountContainer";
+export default EditAccountContainer;
