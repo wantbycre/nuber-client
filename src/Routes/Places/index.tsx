@@ -1,3 +1,3 @@
-import React from "react";
+import PlacesContainer from "./PlacesContainer";
 
-export default () => <span>lala</span>;
+export default PlacesContainer;

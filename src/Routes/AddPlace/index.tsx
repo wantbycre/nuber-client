@@ -1,3 +1,3 @@
-import React from "react";
+import AddPlaceContainer from "./AddPlaceContainer";
 
-export default () => <span>lala</span>;
+export default AddPlaceContainer;
