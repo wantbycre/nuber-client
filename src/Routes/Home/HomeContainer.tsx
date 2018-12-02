@@ -149,7 +149,10 @@ class HomeContainer extends React.Component<IProps, IState> {
                       };
                       subscribeToMore(rideSubscriptionOptions);
                       return (
-                        <AcceptRide mutation={ACCEPT_RIDE}>
+                        <AcceptRide
+                          mutation={ACCEPT_RIDE}
+                          onCompleted={this.handleRideAcceptance}
+                        >
                           {acceptRideFn => (
                             <HomePresenter
                               loading={loading}
@@ -406,9 +409,11 @@ class HomeContainer extends React.Component<IProps, IState> {
     }
   };
   public handleRideRequest = (data: requestRide) => {
+    const { history } = this.props;
     const { RequestRide } = data;
     if (RequestRide.ok) {
       toast.success("Drive requested, finding a driver");
+      history.push(`/ride/${RequestRide.ride!.id}`);
     } else {
       toast.error(RequestRide.error);
     }
@@ -422,6 +427,13 @@ class HomeContainer extends React.Component<IProps, IState> {
       this.setState({
         isDriving
       });
+    }
+  };
+  public handleRideAcceptance = (data: acceptRide) => {
+    const { history } = this.props;
+    const { UpdateRideStatus } = data;
+    if (UpdateRideStatus.ok) {
+      history.push(`/ride/${UpdateRideStatus.rideId}`);
     }
   };
 }

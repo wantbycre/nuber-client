@@ -14,8 +14,8 @@ Client for the (N)Uber Clone Course on Nomad Academy. ReactJS, Apollo, Typescrip
 ### Logged In:
 
 - [x] Home
-- [ ] Ride
-- [ ] Chat
+- [x] Ride
+- [x] Chat
 - [x] Edit Account
 - [x] Settings
 - [x] Saved Places
@@ -23,3 +23,5 @@ Client for the (N)Uber Clone Course on Nomad Academy. ReactJS, Apollo, Typescrip
 - [x] Find Address
 - [ ] Challenge: Ride History
 - [ ] Challenge: Email Sign In
+
+* #2.61 NearbyDrivers 할때부터 다른 user방법을 몰라서 ..일단 지나감
