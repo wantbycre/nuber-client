@@ -1,3 +1,3 @@
-import React from "react";
+import RideContainer from "./RideContainer";
 
-export default () => <span>lala</span>;
+export default RideContainer;
